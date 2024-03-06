@@ -1,16 +1,14 @@
-import "./App.css";
+import "../App.css";
 import React from "react";
-import NavBar from "./components/navbar";
-import Cards from "./components/card";
+import Cards from "../components/card";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { NavLink } from "react-router-dom";
 
-function App() {
+function Home() {
   return (
     <div className="App">
-      <NavBar />
-      <hr />
       <div className="container">
         <Cards />
         <h1>Inicio de pagina</h1>
@@ -26,8 +24,8 @@ function App() {
           facilis, hic alias error aperiam placeat molestias earum facere,
           distinctio nam exercitationem laboriosam. Possimus voluptatibus itaque
         </p>
-        <Row xs={1} md={2} className="g-4">
-          {Array.from({ length: 4 }).map((_, idx) => (
+        <Row xs={1} md={4} className="g-4">
+          {Array.from({ length: 10 }).map((_, idx) => (
             <Col key={idx}>
               <Card>
                 <Card.Img variant="top" src="https://www.gaudi.com.mx/wp-content/uploads/2020/07/RS-500-Requiez-Silla-Para-Oficina-Gaudi-Muebles-2.png" />
@@ -38,6 +36,7 @@ function App() {
                     natural lead-in to additional content. This content is a
                     little bit longer.
                   </Card.Text>
+                  <NavLink to='/product'>Ver producto</NavLink>
                 </Card.Body>
               </Card>
             </Col>
@@ -48,4 +47,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

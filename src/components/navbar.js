@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { NavLink } from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
 function NavScrollExample() {
@@ -17,8 +18,12 @@ function NavScrollExample() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Perfil</Nav.Link>
+            <Nav.Link>
+              <NavLink to="/">Home</NavLink>{" "}
+            </Nav.Link>
+            <Nav.Link>
+              <NavLink to="/about">Sobre nosotros</NavLink>{" "}
+            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -31,7 +36,9 @@ function NavScrollExample() {
           </Form>
 
           <Nav.Link href="#action2" style={{ marginLeft: 10 + "px" }}>
-            <MdOutlineShoppingCart style={{ fontSize: 40 + "px" }} />
+            <NavLink to="/carshop">
+              <MdOutlineShoppingCart style={{ fontSize: 40 + "px" }} />
+            </NavLink>
           </Nav.Link>
         </Navbar.Collapse>
       </Container>
